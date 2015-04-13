@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let url = NSURL (string: "https://guarded-lowlands-2521.herokuapp.com");
+        let requestObj = NSURLRequest(URL: url!);
+        webView.loadRequest(requestObj);
     }
 
     override func didReceiveMemoryWarning() {
