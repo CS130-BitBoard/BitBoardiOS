@@ -10,13 +10,14 @@
 		B360E54D286FEA8DD39D93F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFEC78D89A544344A517420 /* libPods.a */; };
 		D98495A81B094F8500A8B745 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495A71B094F8500A8B745 /* main.m */; };
 		D98495AB1B094F8500A8B745 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495AA1B094F8500A8B745 /* AppDelegate.m */; };
-		D98495AE1B094F8500A8B745 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495AD1B094F8500A8B745 /* ViewController.m */; };
+		D98495AE1B094F8500A8B745 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495AD1B094F8500A8B745 /* RootViewController.m */; };
 		D98495B11B094F8500A8B745 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98495AF1B094F8500A8B745 /* Main.storyboard */; };
 		D98495B31B094F8500A8B745 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98495B21B094F8500A8B745 /* Images.xcassets */; };
 		D98495B61B094F8500A8B745 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98495B41B094F8500A8B745 /* LaunchScreen.xib */; };
 		D98495C21B094F8500A8B745 /* BitBoardiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495C11B094F8500A8B745 /* BitBoardiOSTests.m */; };
 		D98495CD1B0955A400A8B745 /* CanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495CC1B0955A400A8B745 /* CanvasViewController.m */; };
 		D98495CF1B09561900A8B745 /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495CE1B09561900A8B745 /* JoinViewController.m */; };
+		D9F039181B09691400934A4D /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F039171B09691400934A4D /* NavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +37,8 @@
 		D98495A71B094F8500A8B745 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D98495A91B094F8500A8B745 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D98495AA1B094F8500A8B745 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D98495AC1B094F8500A8B745 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D98495AD1B094F8500A8B745 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D98495AC1B094F8500A8B745 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		D98495AD1B094F8500A8B745 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		D98495B01B094F8500A8B745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D98495B21B094F8500A8B745 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D98495B51B094F8500A8B745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -48,6 +49,8 @@
 		D98495CC1B0955A400A8B745 /* CanvasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasViewController.m; sourceTree = "<group>"; };
 		D98495CE1B09561900A8B745 /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinViewController.m; sourceTree = "<group>"; };
 		D98495D01B09564000A8B745 /* JoinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoinViewController.h; sourceTree = "<group>"; };
+		D9F039171B09691400934A4D /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		D9F039191B09691F00934A4D /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		DBFEC78D89A544344A517420 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30879639F2521907293470E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,9 +116,11 @@
 			children = (
 				D98495A91B094F8500A8B745 /* AppDelegate.h */,
 				D98495AA1B094F8500A8B745 /* AppDelegate.m */,
-				D98495AC1B094F8500A8B745 /* ViewController.h */,
-				D98495AD1B094F8500A8B745 /* ViewController.m */,
 				D98495AF1B094F8500A8B745 /* Main.storyboard */,
+				D9F039191B09691F00934A4D /* NavigationController.h */,
+				D9F039171B09691400934A4D /* NavigationController.m */,
+				D98495AC1B094F8500A8B745 /* RootViewController.h */,
+				D98495AD1B094F8500A8B745 /* RootViewController.m */,
 				D98495CB1B0955A400A8B745 /* CanvasViewController.h */,
 				D98495CC1B0955A400A8B745 /* CanvasViewController.m */,
 				D98495D01B09564000A8B745 /* JoinViewController.h */,
@@ -288,9 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98495AE1B094F8500A8B745 /* ViewController.m in Sources */,
+				D98495AE1B094F8500A8B745 /* RootViewController.m in Sources */,
 				D98495CD1B0955A400A8B745 /* CanvasViewController.m in Sources */,
 				D98495CF1B09561900A8B745 /* JoinViewController.m in Sources */,
+				D9F039181B09691400934A4D /* NavigationController.m in Sources */,
 				D98495AB1B094F8500A8B745 /* AppDelegate.m in Sources */,
 				D98495A81B094F8500A8B745 /* main.m in Sources */,
 			);

@@ -1,20 +1,19 @@
 //
-//  UIViewController+CanvasViewController.m
+//  ViewController.m
 //  BitBoardiOS
 //
 //  Created by Austin Martin on 5/17/15.
 //  Copyright (c) 2015 ___CS130___. All rights reserved.
 //
 
-#import "CanvasViewController.h"
+#import "RootViewController.h"
 
-@interface CanvasViewController ()
+@interface RootViewController ()
 
 
 @end
 
-@implementation CanvasViewController
-
+@implementation RootViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,11 +23,7 @@
     screenWidth     = screenRect.size.width;
     screenHeight    = screenRect.size.height;
     
-    // Hide the navigation bar
-    [self.navigationController setNavigationBarHidden:YES];
 
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +31,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)joinButtonPressed:(id)sender {
+    
+    
+    
+    
+    
+    
+}
 
-
+- (IBAction)createButtonPressed:(id)sender {
+}
 @end
