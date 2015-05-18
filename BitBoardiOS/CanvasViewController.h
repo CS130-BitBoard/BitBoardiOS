@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Socket_IO_Client_Swift;
 
 
 @interface CanvasViewController : UIViewController

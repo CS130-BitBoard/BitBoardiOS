@@ -1,10 +1,10 @@
 PODS:
-  - SocketRocket (0.2.0)
+  - Socket.IO-Client-Swift (2.3.0)
 
 DEPENDENCIES:
-  - SocketRocket
+  - Socket.IO-Client-Swift
 
 SPEC CHECKSUMS:
-  SocketRocket: 54a4ac2f354c4e8c51ef5dcd4a13bc556d4f2b7c
+  Socket.IO-Client-Swift: 40b73ad7ed52094f9aade2eb250fa3a751536ef0
 
 COCOAPODS: 0.37.1

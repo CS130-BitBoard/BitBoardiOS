@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B360E54D286FEA8DD39D93F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFEC78D89A544344A517420 /* libPods.a */; };
+		4C8D652260FF50FF9C68A2ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65EAC4FB88F203BBD7F0B9D0 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D98495A81B094F8500A8B745 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495A71B094F8500A8B745 /* main.m */; };
 		D98495AB1B094F8500A8B745 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495AA1B094F8500A8B745 /* AppDelegate.m */; };
 		D98495AE1B094F8500A8B745 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495AD1B094F8500A8B745 /* RootViewController.m */; };
@@ -32,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		37B925F64A0452E72A97F2F1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		65EAC4FB88F203BBD7F0B9D0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98495A21B094F8500A8B745 /* BitBoardiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitBoardiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98495A61B094F8500A8B745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D98495A71B094F8500A8B745 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		D98495D01B09564000A8B745 /* JoinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoinViewController.h; sourceTree = "<group>"; };
 		D9F039171B09691400934A4D /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		D9F039191B09691F00934A4D /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
-		DBFEC78D89A544344A517420 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30879639F2521907293470E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B360E54D286FEA8DD39D93F9 /* libPods.a in Frameworks */,
+				4C8D652260FF50FF9C68A2ED /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 		B16DF9FD3AC5FC1C3DDE0FBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DBFEC78D89A544344A517420 /* libPods.a */,
+				65EAC4FB88F203BBD7F0B9D0 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,6 +170,7 @@
 				D984959F1B094F8500A8B745 /* Frameworks */,
 				D98495A01B094F8500A8B745 /* Resources */,
 				4D2C95BDA03EB809E3C32F82 /* Copy Pods Resources */,
+				C0BB2201C501D226638BE97A /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +270,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0BB2201C501D226638BE97A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FC4EFEAB5A58C260727B3F60 /* Check Pods Manifest.lock */ = {
@@ -423,6 +439,7 @@
 			baseConfigurationReference = 37B925F64A0452E72A97F2F1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = BitBoardiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -434,6 +451,7 @@
 			baseConfigurationReference = E30879639F2521907293470E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = BitBoardiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

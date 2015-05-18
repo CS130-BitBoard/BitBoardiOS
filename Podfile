@@ -1,3 +1,5 @@
-platform:ios, "8.1"
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
 
-pod "SocketRocket"
+pod 'Socket.IO-Client-Swift'

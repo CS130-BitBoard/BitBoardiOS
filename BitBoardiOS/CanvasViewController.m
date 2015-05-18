@@ -10,7 +10,6 @@
 
 @interface CanvasViewController ()
 
-
 @end
 
 @implementation CanvasViewController
