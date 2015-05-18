@@ -39,7 +39,42 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"moveToCanvasSegue"]){
+        CanvasViewController *controller = (CanvasViewController *)segue.destinationViewController;
+        // TODO: Perform setup for the room here (room name, user, PW)
+        
+        
+    }
+    
+}
 
+
+- (IBAction)goButtonPressed:(id)sender {
+    
+    // TODO: check if all fields are filled out correctly before moving to canvas
+    
+    // Convert text input to strings
+    NSString *roomName = _roomNameTextEntry.text;
+    NSString *yourName = _yourNameTextEntry.text;
+    NSString *password = _passwordTextEntry.text;
+    
+    if (![roomName isEqualToString:@""]) {
+        [self performSegueWithIdentifier:@"goToCanvasSegue" sender:nil];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"You must provide a room name."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+
+    
+
+    
+    
+}
 
 
 @end
