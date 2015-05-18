@@ -39,7 +39,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"moveToCanvasSegue"]){
+        CanvasViewController *controller = (CanvasViewController *)segue.destinationViewController;
+        // TODO: Perform setup for the room here (room name, user, PW)
+        
+        
+    }
+    
+}
 
+
+- (IBAction)goButtonPressed:(id)sender {
+    
+    // TODO: check if all fields are filled out correctly before moving to canvas
+    
+    [self performSegueWithIdentifier:@"goToCanvasSegue" sender:nil];
+
+    
+    
+}
 
 
 @end

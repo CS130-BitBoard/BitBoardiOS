@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CanvasViewController.h"
 
 @interface JoinViewController : UIViewController
 {
@@ -18,5 +19,10 @@
 @property(nonatomic) BOOL isJoiningSession;
 @property (weak, nonatomic) IBOutlet UILabel *titleText;
 
+@property (weak, nonatomic) IBOutlet UITextField *roomNameTextEntry;
+@property (weak, nonatomic) IBOutlet UITextField *yourNameTextEntry;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextEntry;
+
+- (IBAction)goButtonPressed:(id)sender;
 
 @end
