@@ -52,13 +52,18 @@
 
 - (IBAction)goButtonPressed:(id)sender {
     
-    // TODO: check if all fields are filled out correctly before moving to canvas
+    // TODO:
+    // - check if all fields are filled out with valid input
+    // - if in 'create' mode, need to call to server to actually create session
+    // - if in 'join' mode, need to call to server to get current state of room to join
+    // etc.
     
     // Convert text input to strings
     NSString *roomName = _roomNameTextEntry.text;
     NSString *yourName = _yourNameTextEntry.text;
     NSString *password = _passwordTextEntry.text;
     
+    // Basic: check that room name is not empty...
     if (![roomName isEqualToString:@""]) {
         [self performSegueWithIdentifier:@"goToCanvasSegue" sender:nil];
     } else {
@@ -70,9 +75,6 @@
         [alert show];
     }
 
-    
-
-    
     
 }
 
