@@ -22,8 +22,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="joinButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B4F-Iq-XzL"/>
-                                    <segue destination="SDh-q9-mmg" kind="show" identifier="showSegue" id="DYw-sb-LsE"/>
+                                    <segue destination="SDh-q9-mmg" kind="show" identifier="joinSegue" id="DYw-sb-LsE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azq-JE-6SM">
@@ -32,7 +31,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="createButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Em-SP-47Y"/>
                                     <segue destination="SDh-q9-mmg" kind="show" identifier="createSegue" id="0FF-pK-1aA"/>
                                 </connections>
                             </button>
@@ -94,9 +92,9 @@
                                     <segue destination="6Ie-Yt-th8" kind="show" id="Oi4-8W-RRO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hu-aR-QZP">
-                                <rect key="frame" x="166" y="111" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hu-aR-QZP">
+                                <rect key="frame" x="66" y="72" width="242" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -104,6 +102,9 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="titleText" destination="9Hu-aR-QZP" id="o1t-6b-PyK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4tw-qi-ZiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,6 +139,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0FF-pK-1aA"/>
+        <segue reference="DYw-sb-LsE"/>
     </inferredMetricsTieBreakers>
 </document>

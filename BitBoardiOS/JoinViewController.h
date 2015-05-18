@@ -15,6 +15,8 @@
     CGFloat screenHeight;
 }
 
-- (IBAction)xButtonPressed:(id)sender;
+@property(nonatomic) BOOL isJoiningSession;
+@property (weak, nonatomic) IBOutlet UILabel *titleText;
+
 
 @end

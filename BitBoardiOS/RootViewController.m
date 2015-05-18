@@ -31,15 +31,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)joinButtonPressed:(id)sender {
-    
-    
-    
-    
-    
-    
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"joinSegue"]){
+        JoinViewController *controller = (JoinViewController *)segue.destinationViewController;
+        controller.isJoiningSession = YES;
+    } else if([segue.identifier isEqualToString:@"createSegue"]){
+        JoinViewController *controller = (JoinViewController *)segue.destinationViewController;
+        controller.isJoiningSession = NO;
+    }
+
 }
 
-- (IBAction)createButtonPressed:(id)sender {
-}
 @end

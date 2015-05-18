@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JoinViewController.h"
 
 @interface RootViewController : UIViewController
 {
@@ -16,12 +17,7 @@
 }
 
 
-
 @property (weak, nonatomic) IBOutlet UIButton *joinButton;
-- (IBAction)joinButtonPressed:(id)sender;
-
-
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
-- (IBAction)createButtonPressed:(id)sender;
 
 @end
