@@ -54,7 +54,23 @@
     
     // TODO: check if all fields are filled out correctly before moving to canvas
     
-    [self performSegueWithIdentifier:@"goToCanvasSegue" sender:nil];
+    // Convert text input to strings
+    NSString *roomName = _roomNameTextEntry.text;
+    NSString *yourName = _yourNameTextEntry.text;
+    NSString *password = _passwordTextEntry.text;
+    
+    if (![roomName isEqualToString:@""]) {
+        [self performSegueWithIdentifier:@"goToCanvasSegue" sender:nil];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"You must provide a room name."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+
+    
 
     
     
