@@ -5,6 +5,7 @@
 //  Created by Akshay Bakshi on 5/27/15.
 //  Copyright (c) 2015 ___CS130___. All rights reserved.
 //
+//  Singleton YAY
 
 #import <Foundation/Foundation.h>
 #import "Bridging-Header.h"

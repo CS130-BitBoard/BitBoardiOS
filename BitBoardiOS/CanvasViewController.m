@@ -34,7 +34,8 @@
     }
     
     // Testing: show alerts for the information recieved
-    UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Room name"
+    //TODO: Move these tests to XCTest
+    /*UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Room name"
                                                     message:_roomName
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
@@ -53,7 +54,7 @@
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
-    [alert3 show];
+    [alert3 show];*/
 }
 
 - (void) joinSession {
@@ -79,9 +80,13 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
+    SocketIOClient* socket = [SharedSocketClient sharedClient];
     
+    [socket on:@"connect" callback:^(NSArray* data, void (^ack)(NSArray*)) {
+        NSLog(@"socket connected");
+    }];
     
-    
+    [socket connect];
     
 }
 

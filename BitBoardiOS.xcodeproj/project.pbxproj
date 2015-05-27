@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C8D652260FF50FF9C68A2ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65EAC4FB88F203BBD7F0B9D0 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BA1D5FF11B165B66001F314C /* SharedSocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1D5FF01B165B66001F314C /* SharedSocketClient.m */; };
 		D98495A81B094F8500A8B745 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495A71B094F8500A8B745 /* main.m */; };
 		D98495AB1B094F8500A8B745 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495AA1B094F8500A8B745 /* AppDelegate.m */; };
 		D98495AE1B094F8500A8B745 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98495AD1B094F8500A8B745 /* RootViewController.m */; };
@@ -33,6 +34,9 @@
 /* Begin PBXFileReference section */
 		37B925F64A0452E72A97F2F1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		65EAC4FB88F203BBD7F0B9D0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1D5FEC1B1652CA001F314C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		BA1D5FEF1B165B66001F314C /* SharedSocketClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedSocketClient.h; sourceTree = "<group>"; };
+		BA1D5FF01B165B66001F314C /* SharedSocketClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedSocketClient.m; sourceTree = "<group>"; };
 		D98495A21B094F8500A8B745 /* BitBoardiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitBoardiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98495A61B094F8500A8B745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D98495A71B094F8500A8B745 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -128,6 +132,9 @@
 				D98495B21B094F8500A8B745 /* Images.xcassets */,
 				D98495B41B094F8500A8B745 /* LaunchScreen.xib */,
 				D98495A51B094F8500A8B745 /* Supporting Files */,
+				BA1D5FEC1B1652CA001F314C /* Bridging-Header.h */,
+				BA1D5FEF1B165B66001F314C /* SharedSocketClient.h */,
+				BA1D5FF01B165B66001F314C /* SharedSocketClient.m */,
 			);
 			path = BitBoardiOS;
 			sourceTree = "<group>";
@@ -315,6 +322,7 @@
 				D9F039181B09691400934A4D /* NavigationController.m in Sources */,
 				D98495AB1B094F8500A8B745 /* AppDelegate.m in Sources */,
 				D98495A81B094F8500A8B745 /* main.m in Sources */,
+				BA1D5FF11B165B66001F314C /* SharedSocketClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
