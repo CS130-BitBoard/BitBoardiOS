@@ -42,6 +42,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"moveToCanvasSegue"]){
         CanvasViewController *controller = (CanvasViewController *)segue.destinationViewController;
+        
         // TODO: Perform setup for the room here (room name, user, PW)
         
         
@@ -59,6 +60,7 @@
     NSString *yourName = _yourNameTextEntry.text;
     NSString *password = _passwordTextEntry.text;
     
+    // TODO: (in more detail) validate input from the user
     if (![roomName isEqualToString:@""]) {
         [self performSegueWithIdentifier:@"goToCanvasSegue" sender:nil];
     } else {
@@ -70,6 +72,15 @@
         [alert show];
     }
     
+    // TODO: Call to API to join or create the session:
+    if (_isJoiningSession) {
+        // Join a session:
+        
+        
+    } else {
+        // Create a new session:
+        
+    }
     
     
     
