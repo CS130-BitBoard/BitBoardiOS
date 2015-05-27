@@ -32,7 +32,8 @@
     } else {
         [self createSession];
     }
-        
+    
+    // Testing: show alerts for the information recieved
     UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Room name"
                                                     message:_roomName
                                                    delegate:nil
@@ -58,6 +59,12 @@
 - (void) joinSession {
     // TODO: create logic to call to server w/ socket to join an existing session
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Joining a session?"
+                                                     message:@"Yes you are"
+                                                    delegate:nil
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+    [alert show];
     
     
     
@@ -66,6 +73,12 @@
 - (void) createSession {
     // TODO: create logic to call to server w/ socket to create a new session
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Creating a session?"
+                                                    message:@"Yes you are"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
     
     
     
