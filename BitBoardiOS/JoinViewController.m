@@ -40,11 +40,14 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"moveToCanvasSegue"]){
+    if([segue.identifier isEqualToString:@"goToCanvasSegue"]){
         CanvasViewController *controller = (CanvasViewController *)segue.destinationViewController;
-        // TODO: Perform setup for the room here (room name, user, PW)
         
-        
+        // Pass setup information for the room here (room name, user, PW).
+        controller.isJoiningSession = _isJoiningSession;
+        controller.roomName = _roomNameTextEntry.text;
+        controller.yourName = _yourNameTextEntry.text;
+        controller.password = _passwordTextEntry.text;
     }
     
 }
@@ -52,16 +55,21 @@
 
 - (IBAction)goButtonPressed:(id)sender {
     
-    // TODO: check if all fields are filled out correctly before moving to canvas
+    // Check if all fields are filled out correctly before moving to canvas
     
     // Convert text input to strings
     NSString *roomName = _roomNameTextEntry.text;
     NSString *yourName = _yourNameTextEntry.text;
     NSString *password = _passwordTextEntry.text;
     
+    // TODO: validate input more
+    
+    
     if (![roomName isEqualToString:@""]) {
+        // Perform segue if input fields are valid
         [self performSegueWithIdentifier:@"goToCanvasSegue" sender:nil];
     } else {
+        // If input is not valid/complete, show an error to the user letting them know that they have messed up
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                         message:@"You must provide a room name."
                                                        delegate:nil
@@ -69,10 +77,6 @@
                                               otherButtonTitles:nil];
         [alert show];
     }
-    
-    
-    
-    
     
 }
 

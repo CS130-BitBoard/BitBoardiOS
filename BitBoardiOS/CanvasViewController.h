@@ -17,5 +17,9 @@
     CGFloat screenHeight;
 }
 
+@property(nonatomic) BOOL isJoiningSession;
+@property(nonatomic) NSString *roomName;
+@property(nonatomic) NSString *yourName;
+@property(nonatomic) NSString *password;
 
 @end
