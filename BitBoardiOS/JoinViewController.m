@@ -40,12 +40,14 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"moveToCanvasSegue"]){
+    if([segue.identifier isEqualToString:@"goToCanvasSegue"]){
         CanvasViewController *controller = (CanvasViewController *)segue.destinationViewController;
         
-        // TODO: Perform setup for the room here (room name, user, PW)
-        
-        
+        // Pass setup information for the room here (room name, user, PW).
+        controller.isJoiningSession = _isJoiningSession;
+        controller.roomName = _roomNameTextEntry.text;
+        controller.yourName = _yourNameTextEntry.text;
+        controller.password = _passwordTextEntry.text;
     }
     
 }
@@ -60,7 +62,6 @@
     NSString *yourName = _yourNameTextEntry.text;
     NSString *password = _passwordTextEntry.text;
     
-    // TODO: (in more detail) validate input from the user
     if (![roomName isEqualToString:@""]) {
         [self performSegueWithIdentifier:@"goToCanvasSegue" sender:nil];
     } else {
@@ -71,19 +72,6 @@
                                               otherButtonTitles:nil];
         [alert show];
     }
-    
-    // TODO: Call to API to join or create the session:
-    if (_isJoiningSession) {
-        // Join a session:
-        
-        
-    } else {
-        // Create a new session:
-        
-    }
-    
-    
-    
     
 }
 

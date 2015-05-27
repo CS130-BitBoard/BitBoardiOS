@@ -25,7 +25,49 @@
     
     // Hide the navigation bar
     [self.navigationController setNavigationBarHidden:YES];
+    
+    // TODO: add a spinning/loading UI element until join/create returns successfully
+    if (_isJoiningSession) {
+        [self joinSession];
+    } else {
+        [self createSession];
+    }
+        
+    UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Room name"
+                                                    message:_roomName
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert1 show];
+    
+    UIAlertView *alert2 = [[UIAlertView alloc] initWithTitle:@"Your name"
+                                                    message:_yourName
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert2 show];
+    
+    UIAlertView *alert3 = [[UIAlertView alloc] initWithTitle:@"Password"
+                                                    message:_password
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert3 show];
+}
 
+- (void) joinSession {
+    // TODO: create logic to call to server w/ socket to join an existing session
+    
+    
+    
+    
+}
+
+- (void) createSession {
+    // TODO: create logic to call to server w/ socket to create a new session
+    
+    
+    
     
     
 }
