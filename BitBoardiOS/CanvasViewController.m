@@ -33,8 +33,6 @@
     CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
     CGFloat webViewYOffset = statusBarHeight + navigationBarHeight;
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"⚙" style:UIBarButtonItemStylePlain target:self action:nil];
-    
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, webViewYOffset, self.view.bounds.size.width, self.view.bounds.size.height - webViewYOffset)];
     NSString *fullUrl = @"http://google.com";
     NSURL *url = [NSURL URLWithString:fullUrl];
@@ -103,18 +101,19 @@
     }];
     
     [socket connect];
-    
-    // Socket connected!
-    // TODO: pass messages through socket to create a new session.
-    //      Room name, your name, PW.
-    
-    
-    
 }
 
+-(void) viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    
+    if([self isMovingFromParentViewController]){
+        [socket disconnectWithFast:NO];
+        //do stuff upon exiting canbas here
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  // Dispose of any resources that can be recreated.
 }
 
 
