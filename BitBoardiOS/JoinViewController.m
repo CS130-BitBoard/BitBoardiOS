@@ -29,14 +29,14 @@
     // Note: UI Text has been given programmable titles b/c desktop app currently doesn't have "room code"
     //      as a field option when creating a session.
     
-    _inputTitle1.text = @"ROOM CODE:";
-    _inputTitle2.text = @"YOUR NAME:";
-    _inputTitle3.text = @"PASSWORD:";
+    _inputTitle1.text = @"Room Code:";
+    _inputTitle2.text = @"Name:";
+    _inputTitle3.text = @"Password:";
     
     if (_isJoiningSession) {
-        _titleText.text = [NSString stringWithFormat:@"JOIN SESSION"];
+        _titleText.text = [NSString stringWithFormat:@"Join Session"];
     } else {
-        _titleText.text = [NSString stringWithFormat:@"CREATE SESSION"];
+        _titleText.text = [NSString stringWithFormat:@"Create Session"];
         
     }
 }
