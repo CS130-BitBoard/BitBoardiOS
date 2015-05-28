@@ -23,6 +23,14 @@
     screenWidth     = screenRect.size.width;
     screenHeight    = screenRect.size.height;
     
+    [[_joinButton layer] setBorderWidth:1.0f];
+    [[_joinButton layer] setBorderColor:[UIColor blackColor].CGColor];
+    [[_joinButton layer] setCornerRadius:10.0f];
+
+    [[_createButton layer] setBorderWidth:1.0f];
+    [[_createButton layer] setBorderColor:[UIColor blackColor].CGColor];
+    [[_createButton layer] setCornerRadius:10.0f];
+
 
 }
 

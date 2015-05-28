@@ -33,6 +33,8 @@
         [self createSession];
     }
     
+    NSLog(@"test output");
+    
     // Testing: show alerts for the information recieved
     //TODO: Move these tests to XCTest
     /*UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Room name"
@@ -67,6 +69,14 @@
                                            otherButtonTitles:nil];
     [alert show];
     
+    // Open socket
+    SocketIOClient* socket = [SharedSocketClient sharedClient];
+    
+    [socket on:@"connect" callback:^(NSArray* data, void (^ack)(NSArray*)) {
+        NSLog(@"socket connected");
+    }];
+    
+    // TODO: Join the session
     
     
 }
@@ -80,6 +90,8 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
+    
+    // Open socket
     SocketIOClient* socket = [SharedSocketClient sharedClient];
     
     [socket on:@"connect" callback:^(NSArray* data, void (^ack)(NSArray*)) {
@@ -87,6 +99,12 @@
     }];
     
     [socket connect];
+    
+    // Socket connected!
+    // TODO: pass messages through socket to create a new session.
+    //      Room name, your name, PW.
+    
+    
     
 }
 
