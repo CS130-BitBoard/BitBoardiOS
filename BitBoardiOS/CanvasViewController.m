@@ -19,10 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    screenRect      = [[UIScreen mainScreen] bounds];
-    screenWidth     = screenRect.size.width;
-    screenHeight    = screenRect.size.height;
 
     socket = [SharedSocketClient sharedClient];
 

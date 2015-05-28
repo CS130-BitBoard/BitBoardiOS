@@ -12,9 +12,6 @@
 
 @interface JoinViewController : UIViewController
 {
-    CGRect  screenRect;
-    CGFloat screenWidth;
-    CGFloat screenHeight;
 }
 
 @property(nonatomic) BOOL isJoiningSession;
