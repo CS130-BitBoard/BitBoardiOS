@@ -8,8 +8,9 @@
 
 #import "CanvasViewController.h"
 
-@interface CanvasViewController ()
-
+@interface CanvasViewController (){
+    SocketIOClient* socket;
+}
 @end
 
 @implementation CanvasViewController
@@ -25,7 +26,8 @@
     
     // Hide the navigation bar
     [self.navigationController setNavigationBarHidden:YES];
-    
+    socket = [SharedSocketClient sharedClient];
+
     // TODO: add a spinning/loading UI element until join/create returns successfully
     if (_isJoiningSession) {
         [self joinSession];
@@ -60,34 +62,38 @@
 - (void) joinSession {
     // TODO: create logic to call to server w/ socket to join an existing session
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Joining a session?"
+    /*UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Joining a session?"
                                                      message:@"Yes you are"
                                                     delegate:nil
                                            cancelButtonTitle:@"OK"
                                            otherButtonTitles:nil];
-    [alert show];
+    [alert show];*/
     
-    
+    [self emitJoinBoard];
     
 }
 
 - (void) createSession {
     // TODO: create logic to call to server w/ socket to create a new session
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Creating a session?"
+    /*UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Creating a session?"
                                                     message:@"Yes you are"
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
-    [alert show];
-    SocketIOClient* socket = [SharedSocketClient sharedClient];
+    [alert show];*/
+    [self emitJoinBoard];
     
+}
+
+-(void) emitJoinBoard{
     [socket on:@"connect" callback:^(NSArray* data, void (^ack)(NSArray*)) {
         NSLog(@"socket connected");
+        [socket emit:@"joinBoard" withItems:[NSArray arrayWithObjects:_roomName,_yourName, nil]];
+        //[socket emit:@"sendChatMessage" withItems:[NSArray arrayWithObject:@"test message"]];
     }];
     
     [socket connect];
-    
 }
 
 - (void)didReceiveMemoryWarning {
