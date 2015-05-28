@@ -23,7 +23,7 @@
     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationBar.shadowImage = [UIImage new];
     self.navigationBar.translucent = YES;
-    self.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationBar.tintColor = [UIColor whiteColor];
 
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowOffset = CGSizeMake(0.0, 1.0);

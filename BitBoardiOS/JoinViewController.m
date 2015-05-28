@@ -25,21 +25,22 @@
     screenWidth     = screenRect.size.width;
     screenHeight    = screenRect.size.height;
     
-    [[_goButton layer] setBorderWidth:1.0f];
-    [[_goButton layer] setBorderColor:[UIColor blackColor].CGColor];
-    [[_goButton layer] setCornerRadius:10.0f];
+//    [[_goButton layer] setBorderWidth:1.0f];
+//    [[_goButton layer] setBorderColor:[UIColor blackColor].CGColor];
+//    [[_goButton layer] setCornerRadius:10.0f];
+    [[_goButton layer] setBackgroundColor:[UIColor redColor].CGColor];
     
     // Note: UI Text has been given programmable titles b/c desktop app currently doesn't have "room code"
     //      as a field option when creating a session.
     
-    _inputTitle1.text = @"Room Code:";
-    _inputTitle2.text = @"Your Name:";
-    _inputTitle3.text = @"Password:";
+    _inputTitle1.text = @"ROOM CODE:";
+    _inputTitle2.text = @"YOUR NAME:";
+    _inputTitle3.text = @"PASSWORD:";
     
     if (_isJoiningSession) {
-        _titleText.text = [NSString stringWithFormat:@"Join Session"];
+        _titleText.text = [NSString stringWithFormat:@"JOIN SESSION"];
     } else {
-        _titleText.text = [NSString stringWithFormat:@"Create Session"];
+        _titleText.text = [NSString stringWithFormat:@"CREATE SESSION"];
         
     }
     
