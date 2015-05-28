@@ -34,6 +34,8 @@
         _titleText.text = [NSString stringWithFormat:@"Create Session"];
         
     }
+    //Set back button text for child view
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Exit" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

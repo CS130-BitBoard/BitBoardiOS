@@ -33,6 +33,8 @@
     CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
     CGFloat webViewYOffset = statusBarHeight + navigationBarHeight;
 
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"⚙" style:UIBarButtonItemStylePlain target:self action:nil];
+    
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, webViewYOffset, self.view.bounds.size.width, self.view.bounds.size.height - webViewYOffset)];
     NSString *fullUrl = @"http://google.com";
     NSURL *url = [NSURL URLWithString:fullUrl];
