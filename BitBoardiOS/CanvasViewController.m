@@ -23,9 +23,7 @@
     screenRect      = [[UIScreen mainScreen] bounds];
     screenWidth     = screenRect.size.width;
     screenHeight    = screenRect.size.height;
-    
-    // Hide the navigation bar
-    [self.navigationController setNavigationBarHidden:YES];
+
     socket = [SharedSocketClient sharedClient];
 
     // TODO: add a spinning/loading UI element until join/create returns successfully
@@ -34,8 +32,17 @@
     } else {
         [self createSession];
     }
-    
-    NSLog(@"test output");
+
+    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
+    CGFloat webViewYOffset = statusBarHeight + navigationBarHeight;
+
+    _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, webViewYOffset, self.view.bounds.size.width, self.view.bounds.size.height - webViewYOffset)];
+    NSString *fullUrl = @"http://google.com";
+    NSURL *url = [NSURL URLWithString:fullUrl];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [_webView loadRequest:requestObj];
+    [self.view addSubview:_webView];
     
     // Testing: show alerts for the information recieved
     //TODO: Move these tests to XCTest

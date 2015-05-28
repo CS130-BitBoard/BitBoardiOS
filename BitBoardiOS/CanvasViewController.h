@@ -22,4 +22,6 @@
 @property(nonatomic) NSString *yourName;
 @property(nonatomic) NSString *password;
 
+@property(nonatomic) UIWebView *webView;
+
 @end
