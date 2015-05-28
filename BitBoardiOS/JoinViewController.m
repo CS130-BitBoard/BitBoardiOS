@@ -20,16 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+
+    // KLUDGE: is this necessary?
     screenRect      = [[UIScreen mainScreen] bounds];
     screenWidth     = screenRect.size.width;
     screenHeight    = screenRect.size.height;
-    
-//    [[_goButton layer] setBorderWidth:1.0f];
-//    [[_goButton layer] setBorderColor:[UIColor blackColor].CGColor];
-//    [[_goButton layer] setCornerRadius:10.0f];
-    [[_goButton layer] setBackgroundColor:[UIColor redColor].CGColor];
-    
+
     // Note: UI Text has been given programmable titles b/c desktop app currently doesn't have "room code"
     //      as a field option when creating a session.
     
@@ -43,7 +39,10 @@
         _titleText.text = [NSString stringWithFormat:@"CREATE SESSION"];
         
     }
-    
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
