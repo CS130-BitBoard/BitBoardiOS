@@ -12,9 +12,6 @@
 
 @interface CanvasViewController : UIViewController<UIWebViewDelegate>
 {
-    CGRect  screenRect;
-    CGFloat screenWidth;
-    CGFloat screenHeight;
 }
 
 @property(nonatomic) BOOL isJoiningSession;

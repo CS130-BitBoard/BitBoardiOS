@@ -20,11 +20,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    // KLUDGE: is this necessary?
-    screenRect      = [[UIScreen mainScreen] bounds];
-    screenWidth     = screenRect.size.width;
-    screenHeight    = screenRect.size.height;
-
     socket = [SharedSocketClient sharedClient];
 
     // TODO: add a spinning/loading UI element until join/create returns successfully
@@ -108,7 +103,7 @@
     }];
     
     [socket connect];
-    
+
     // Socket connected!
     // TODO: pass messages through socket to create a new session.
     //      Room name, your name, PW.
@@ -121,10 +116,18 @@
     [webView stringByEvaluatingJavaScriptFromString:@"console.log('Hello world.')"];
 }
 
+-(void) viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    
+    if([self isMovingFromParentViewController]){
+        [socket disconnectWithFast:NO];
+        //do stuff upon exiting canbas here
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  // Dispose of any resources that can be recreated.
 }
 
 

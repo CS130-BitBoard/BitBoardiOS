@@ -21,11 +21,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    // KLUDGE: is this necessary?
-    screenRect      = [[UIScreen mainScreen] bounds];
-    screenWidth     = screenRect.size.width;
-    screenHeight    = screenRect.size.height;
-
     // Note: UI Text has been given programmable titles b/c desktop app currently doesn't have "room code"
     //      as a field option when creating a session.
     
@@ -39,6 +34,8 @@
         _titleText.text = [NSString stringWithFormat:@"Create Session"];
         
     }
+    //Set back button text for child view
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Exit" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

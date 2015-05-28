@@ -12,9 +12,6 @@
 
 @interface RootViewController : UIViewController
 {
-    CGRect  screenRect;
-    CGFloat screenWidth;
-    CGFloat screenHeight;
 }
 
 
