@@ -19,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+
+    // KLUDGE: is this necessary?
     screenRect      = [[UIScreen mainScreen] bounds];
     screenWidth     = screenRect.size.width;
     screenHeight    = screenRect.size.height;
@@ -38,7 +39,9 @@
     CGFloat webViewYOffset = statusBarHeight + navigationBarHeight;
 
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, webViewYOffset, self.view.bounds.size.width, self.view.bounds.size.height - webViewYOffset)];
-    NSString *fullUrl = @"http://google.com";
+    _webView.delegate = self;
+    // TODO: Use real URL
+    NSString *fullUrl = @"http://localhost:3000/boards/1234?userid=deadb33f&mobile=true";
     NSURL *url = [NSURL URLWithString:fullUrl];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:requestObj];
@@ -109,10 +112,15 @@
     // Socket connected!
     // TODO: pass messages through socket to create a new session.
     //      Room name, your name, PW.
-    
-    
-    
 }
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    // TODO: use this kind of script execution to emit events to the webpage, so that we can
+    //       switch tools.
+    // It will use event emission like this: https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events
+    [webView stringByEvaluatingJavaScriptFromString:@"console.log('Hello world.')"];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

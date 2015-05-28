@@ -10,7 +10,7 @@
 #import "SharedSocketClient.h"
 
 
-@interface CanvasViewController : UIViewController
+@interface CanvasViewController : UIViewController<UIWebViewDelegate>
 {
     CGRect  screenRect;
     CGFloat screenWidth;
