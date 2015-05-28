@@ -25,10 +25,22 @@
     screenWidth     = screenRect.size.width;
     screenHeight    = screenRect.size.height;
     
+//    [[_goButton layer] setBorderWidth:1.0f];
+//    [[_goButton layer] setBorderColor:[UIColor blackColor].CGColor];
+//    [[_goButton layer] setCornerRadius:10.0f];
+    [[_goButton layer] setBackgroundColor:[UIColor redColor].CGColor];
+    
+    // Note: UI Text has been given programmable titles b/c desktop app currently doesn't have "room code"
+    //      as a field option when creating a session.
+    
+    _inputTitle1.text = @"ROOM CODE:";
+    _inputTitle2.text = @"YOUR NAME:";
+    _inputTitle3.text = @"PASSWORD:";
+    
     if (_isJoiningSession) {
-        _titleText.text = [NSString stringWithFormat:@"Join Session"];
+        _titleText.text = [NSString stringWithFormat:@"JOIN SESSION"];
     } else {
-        _titleText.text = [NSString stringWithFormat:@"Create Session"];
+        _titleText.text = [NSString stringWithFormat:@"CREATE SESSION"];
         
     }
     
@@ -45,7 +57,10 @@
         
         // Pass setup information for the room here (room name, user, PW).
         controller.isJoiningSession = _isJoiningSession;
-        controller.roomName = _roomNameTextEntry.text;
+        
+        if (_isJoiningSession) {
+            controller.roomName = _roomNameTextEntry.text;
+        }
         controller.yourName = _yourNameTextEntry.text;
         controller.password = _passwordTextEntry.text;
     }
@@ -58,20 +73,20 @@
     // Check if all fields are filled out correctly before moving to canvas
     
     // Convert text input to strings
-    NSString *roomName = _roomNameTextEntry.text;
+//    NSString *roomName = _roomNameTextEntry.text;
     NSString *yourName = _yourNameTextEntry.text;
     NSString *password = _passwordTextEntry.text;
     
     // TODO: validate input more
     
     
-    if (![roomName isEqualToString:@""]) {
+    if (![yourName isEqualToString:@""]) {
         // Perform segue if input fields are valid
         [self performSegueWithIdentifier:@"goToCanvasSegue" sender:nil];
     } else {
         // If input is not valid/complete, show an error to the user letting them know that they have messed up
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:@"You must provide a room name."
+                                                        message:@"You must provide your name."
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];

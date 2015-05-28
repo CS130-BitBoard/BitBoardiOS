@@ -35,6 +35,8 @@
         [self createSession];
     }
     
+    NSLog(@"test output");
+    
     // Testing: show alerts for the information recieved
     //TODO: Move these tests to XCTest
     /*UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Room name"
@@ -67,8 +69,9 @@
                                                     delegate:nil
                                            cancelButtonTitle:@"OK"
                                            otherButtonTitles:nil];
+
     [alert show];*/
-    
+
     [self emitJoinBoard];
     
 }
@@ -81,6 +84,7 @@
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
+
     [alert show];*/
     [self emitJoinBoard];
     
@@ -94,6 +98,13 @@
     }];
     
     [socket connect];
+    
+    // Socket connected!
+    // TODO: pass messages through socket to create a new session.
+    //      Room name, your name, PW.
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
