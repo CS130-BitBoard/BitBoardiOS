@@ -22,7 +22,7 @@
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
      setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor],
-       NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Thin" size:20.0f]
+       NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue" size:20.0f]
        }
      forState:UIControlStateNormal];
 }

@@ -29,13 +29,17 @@
     _inputTitle3.text = @"Password:";
     
     if (_isJoiningSession) {
-        _titleText.text = [NSString stringWithFormat:@"Join Session"];
+        self.navigationItem.title = @"Join Session";
+        //_titleText.text = [NSString stringWithFormat:@"Join Session"];
     } else {
-        _titleText.text = [NSString stringWithFormat:@"Create Session"];
+        self.navigationItem.title = @"Create Session";
+       // _titleText.text = [NSString stringWithFormat:@"Create Session"];
         
     }
+    
     //Set back button text for child view
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Exit" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.roomNameTextEntry becomeFirstResponder];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
