@@ -30,16 +30,16 @@
     
     if (_isJoiningSession) {
         self.navigationItem.title = @"Join Session";
-        //_titleText.text = [NSString stringWithFormat:@"Join Session"];
+         [_roomNameTextEntry setKeyboardType:UIKeyboardTypeDefault];
     } else {
         self.navigationItem.title = @"Create Session";
-       // _titleText.text = [NSString stringWithFormat:@"Create Session"];
-        
+         [_roomNameTextEntry setKeyboardType:UIKeyboardTypeNumberPad];
     }
     
     //Set back button text for child view
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Exit" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.roomNameTextEntry becomeFirstResponder];
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -57,10 +57,7 @@
         
         // Pass setup information for the room here (room name, user, PW).
         controller.isJoiningSession = _isJoiningSession;
-        
-//        if (_isJoiningSession) {
-//            controller.roomName = _roomNameTextEntry.text;
-//        }
+       
         //because if user is creating room on mobile, they need to be able to share the code
         controller.roomName = _roomNameTextEntry.text;
         controller.yourName = _yourNameTextEntry.text;
