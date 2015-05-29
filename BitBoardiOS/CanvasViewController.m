@@ -44,14 +44,15 @@
     
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, webViewYOffset, self.view.bounds.size.width, self.view.bounds.size.height - webViewYOffset)];
     _webView.delegate = self;
-    // TODO: Use real URL
-    //NSString *fullUrl = @"http://bitboard.ryanhansberry.com/boards/1234?userid=deadb33f&mobile=true";
-    NSString *fullUrl = @"http://localhost:3000/boards/1234?userid=deadb33f&mobile=true";
+    NSString *fullUrl = [NSString stringWithFormat:@"http://bitboard.ryanhansberry.com/boards/%@?userid=%@&mobile=true", self.roomName, _yourName];
 
+    //NSLog(fullUrl);
     NSURL *url = [NSURL URLWithString:fullUrl];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:requestObj];
     [self.view addSubview:_webView];
+    
+    self.navigationItem.title = [NSString stringWithFormat:@"Room %@",self.roomName];
     
     // Testing: show alerts for the information recieved
     //TODO: Move these tests to XCTest

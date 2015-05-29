@@ -58,15 +58,23 @@
         // Pass setup information for the room here (room name, user, PW).
         controller.isJoiningSession = _isJoiningSession;
         
-        if (_isJoiningSession) {
-            controller.roomName = _roomNameTextEntry.text;
-        }
+//        if (_isJoiningSession) {
+//            controller.roomName = _roomNameTextEntry.text;
+//        }
+        //because if user is creating room on mobile, they need to be able to share the code
+        controller.roomName = _roomNameTextEntry.text;
         controller.yourName = _yourNameTextEntry.text;
         controller.password = _passwordTextEntry.text;
     }
     
 }
 
+//TODO: Check for length of room code
+//- (void)textFieldDidEndEditing:(UITextField *)textField
+//{
+//    //if([textField.text.length] < 4)
+//        //Show alert. On alert dismiss code block do this -->[password becomeFirstResponder]
+//}
 
 - (IBAction)goButtonPressed:(id)sender {
     
