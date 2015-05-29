@@ -110,7 +110,7 @@
     [socket on:@"connect" callback:^(NSArray* data, void (^ack)(NSArray*)) {
         NSLog(@"socket connected");
         [socket emit:@"joinBoard" withItems:[NSArray arrayWithObjects:_roomName,_yourName, nil]];
-        [socket emit:@"clientDimensions" withItems:[NSArray arrayWithObjects:screenHeight, screenWidth, nil]];
+        [socket emit:@"sendClientDimensions" withItems:[NSArray arrayWithObjects:screenHeight, screenWidth, nil]];
         NSLog(@"Emitted height %@ and width %@", screenHeight, screenWidth);
     }];
     
