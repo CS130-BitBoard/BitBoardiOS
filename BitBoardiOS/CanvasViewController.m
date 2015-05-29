@@ -44,7 +44,7 @@
     
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, webViewYOffset, self.view.bounds.size.width, self.view.bounds.size.height - webViewYOffset)];
     _webView.delegate = self;
-    NSString *fullUrl = [NSString stringWithFormat:@"http://bitboard.ryanhansberry.com/boards/%@?userid=%@&mobile=true", self.roomName, _yourName];
+    NSString *fullUrl = [NSString stringWithFormat:@"http://bitboard.ryanhansberry.com/boards-mobile/%@?userid=%@&password=%@&mobile=true", self.roomName, _yourName, _password];
 
     //NSLog(fullUrl);
     NSURL *url = [NSURL URLWithString:fullUrl];
@@ -108,6 +108,7 @@
 }
 
 -(void) emitJoinBoard{
+    /*
     [socket on:@"connect" callback:^(NSArray* data, void (^ack)(NSArray*)) {
         NSLog(@"socket connected");
         [socket emit:@"joinBoard" withItems:[NSArray arrayWithObjects:_roomName,_yourName, nil]];
@@ -116,6 +117,7 @@
     }];
     
     [socket connect];
+     */
 
     // Socket connected!
     // TODO: pass messages through socket to create a new session.
