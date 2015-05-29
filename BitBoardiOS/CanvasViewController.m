@@ -10,6 +10,11 @@
 
 @interface CanvasViewController (){
     SocketIOClient* socket;
+    CGRect  screenRect; 
+    NSNumber *screenWidth;
+    NSNumber *screenHeight;
+    
+
 }
 @end
 
@@ -33,10 +38,16 @@
     CGFloat navigationBarHeight = self.navigationController.navigationBar.frame.size.height;
     CGFloat webViewYOffset = statusBarHeight + navigationBarHeight;
 
+    screenRect      = [[UIScreen mainScreen] bounds];
+    screenWidth     = [NSNumber numberWithFloat:screenRect.size.width];
+    screenHeight    = [NSNumber numberWithFloat:screenRect.size.height];
+    
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, webViewYOffset, self.view.bounds.size.width, self.view.bounds.size.height - webViewYOffset)];
     _webView.delegate = self;
     // TODO: Use real URL
+    //NSString *fullUrl = @"http://bitboard.ryanhansberry.com/boards/1234?userid=deadb33f&mobile=true";
     NSString *fullUrl = @"http://localhost:3000/boards/1234?userid=deadb33f&mobile=true";
+
     NSURL *url = [NSURL URLWithString:fullUrl];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:requestObj];
@@ -99,7 +110,8 @@
     [socket on:@"connect" callback:^(NSArray* data, void (^ack)(NSArray*)) {
         NSLog(@"socket connected");
         [socket emit:@"joinBoard" withItems:[NSArray arrayWithObjects:_roomName,_yourName, nil]];
-        //[socket emit:@"sendChatMessage" withItems:[NSArray arrayWithObject:@"test message"]];
+        [socket emit:@"clientDimensions" withItems:[NSArray arrayWithObjects:screenHeight, screenWidth, nil]];
+        NSLog(@"Emitted height %@ and width %@", screenHeight, screenWidth);
     }];
     
     [socket connect];
@@ -108,6 +120,8 @@
     // TODO: pass messages through socket to create a new session.
     //      Room name, your name, PW.
 }
+
+
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     // TODO: use this kind of script execution to emit events to the webpage, so that we can
