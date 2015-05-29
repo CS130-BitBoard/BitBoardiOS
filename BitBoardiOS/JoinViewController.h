@@ -7,14 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "CanvasViewController.h"
 
 @interface JoinViewController : UIViewController
 {
-    CGRect  screenRect;
-    CGFloat screenWidth;
-    CGFloat screenHeight;
 }
 
-- (IBAction)xButtonPressed:(id)sender;
+@property(nonatomic) BOOL isJoiningSession;
+@property (weak, nonatomic) IBOutlet UILabel *titleText;
+
+@property (weak, nonatomic) IBOutlet UITextField *roomNameTextEntry;
+@property (weak, nonatomic) IBOutlet UITextField *yourNameTextEntry;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextEntry;
+@property (weak, nonatomic) IBOutlet UILabel *inputTitle1;
+@property (weak, nonatomic) IBOutlet UILabel *inputTitle2;
+@property (weak, nonatomic) IBOutlet UILabel *inputTitle3;
+
+@property (weak, nonatomic) IBOutlet UIButton *goButton;
+- (IBAction)goButtonPressed:(id)sender;
 
 @end

@@ -7,21 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "JoinViewController.h"
 
-@interface ViewController : UIViewController
+@interface RootViewController : UIViewController
 {
-    CGRect  screenRect;
-    CGFloat screenWidth;
-    CGFloat screenHeight;
 }
 
 
-
 @property (weak, nonatomic) IBOutlet UIButton *joinButton;
-- (IBAction)joinButtonPressed:(id)sender;
-
-
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
-- (IBAction)createButtonPressed:(id)sender;
 
 @end

@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SharedSocketClient.h"
 
 
-@interface CanvasViewController : UIViewController
+@interface CanvasViewController : UIViewController<UIWebViewDelegate>
 {
-    CGRect  screenRect;
-    CGFloat screenWidth;
-    CGFloat screenHeight;
 }
 
+@property(nonatomic) BOOL isJoiningSession;
+@property(nonatomic) NSString *roomName;
+@property(nonatomic) NSString *yourName;
+@property(nonatomic) NSString *password;
+
+@property(nonatomic) UIWebView *webView;
 
 @end
